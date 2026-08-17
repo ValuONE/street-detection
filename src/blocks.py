@@ -278,11 +278,7 @@ class SPPF(nn.Module):
 
 
 class Attention(nn.Module):
-    """Multi-head self-attention over all pixels, plus a depthwise 3x3 convolution.
-
-    Queries and keys are narrower than the values, since deciding where to look needs less
-    capacity than the content being mixed. Attention is permutation-invariant over the
-    pixels, so ``pe``, run on the values and added in, is what carries locality.
+    """Multi-head self-attention over all pixels, plus a depthwise convolution.
 
     Args:
         dim: Channels in and out. Must be divisible by ``num_heads``.
@@ -310,10 +306,6 @@ class Attention(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Run the configured components.
-
-        Every one of the ``N = H * W`` pixels is treated as one token. The single ``qkv``
-        convolution is split per head into ``[key_dim, key_dim, head_dim]``, which is why
-        its output width is ``dim + 2 * key_dim * num_heads`` rather than ``3 * dim``.
 
         Args:
             x: ``(B, dim, H, W)`` feature map.
