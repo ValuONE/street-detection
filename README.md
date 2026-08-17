@@ -1,5 +1,9 @@
 # Implementation of YOLO26
 
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.13-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org)
+[![Architecture](https://img.shields.io/badge/Architecture-CNN-1F6FEB)](#scope)
+[![License: MIT](https://img.shields.io/badge/License-MIT-2EA44F)](./LICENSE)
+
 This repository is a from-scratch PyTorch implementation of YOLO26, written using the official
 [Ultralytics YOLO26](https://docs.ultralytics.com/models/yolo26) implementation as a reference.
 
