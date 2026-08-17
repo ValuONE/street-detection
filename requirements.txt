@@ -1,0 +1,10 @@
+# Install torch first, from pytorch.org, so you get the build that matches your CUDA version.
+torch==2.13.0
+
+ultralytics>=8.4.0
+
+pyyaml
+matplotlib
+opencv-python
+
+lap
